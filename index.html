@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zerzius</title>
+
+  <!-- Font (logo: Ubuntu Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Palette sampled from the attached logo */
+      --bg: #DEDDBF;           /* background */
+      --primary: #456350;      /* logo green */
+      --primary-dark: #2E463A; /* darker green */
+      --text: #203026;         /* body text */
+      --muted: rgba(32,48,38,.72);
+      --card: rgba(255,255,255,.18);
+      --border: rgba(69,99,80,.28);
+      --shadow: 0 12px 30px rgba(0,0,0,.08);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a{ color: var(--primary-dark); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding: 10px 2px 22px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width: 220px;
+    }
+
+    .brand img{
+      height: 144px;
+      width: auto;
+      display:block;
+    }
+
+    nav{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+      font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 16px;
+    }
+
+    nav a{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: rgba(255,255,255,.10);
+      text-decoration:none;
+    }
+
+    .hero{
+      padding: 26px 0 34px;
+    }
+
+    .hero-card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:center;
+    }
+
+    .hero h1{
+      margin:0 0 8px;
+      font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .4px;
+      color: var(--primary-dark);
+      font-size: clamp(28px, 4vw, 40px);
+    }
+
+    .hero p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16.5px;
+      max-width: 60ch;
+    }
+
+    .hero-aside{
+      justify-self:end;
+      text-align:right;
+      color: var(--muted);
+      font-size: 14px;
+      border-left: 1px solid var(--border);
+      padding-left: 18px;
+    }
+
+    .hero-aside .tag{
+      display:inline-block;
+      margin-top: 10px;
+      font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.10);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    main{
+      display:grid;
+      gap: 16px;
+      padding-top: 12px;
+    }
+
+    section.card{
+      background: rgba(255,255,255,.12);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 22px;
+    }
+
+    h2{
+      margin:0 0 10px;
+      font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      color: var(--primary-dark);
+      letter-spacing: .2px;
+      font-size: 20px;
+    }
+
+    .divider{
+      height:1px;
+      background: var(--border);
+      margin: 18px 0 0;
+    }
+
+    footer{
+      margin-top: 22px;
+      padding-top: 14px;
+      color: var(--muted);
+      font-size: 13.5px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .small{
+      font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    @media (max-width: 860px){
+      .hero-card{ grid-template-columns: 1fr; }
+      .hero-aside{
+        justify-self:start;
+        text-align:left;
+        border-left: 0;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+        padding-top: 14px;
+      }
+      header{ flex-direction: column; align-items:flex-start; }
+      nav{ justify-content:flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand" aria-label="Zerzius">
+        <!-- Put the attached logo in the same folder as this HTML and keep this filename -->
+        <img src="logo1_zerzius.png" alt="Zerzius logo" />
+      </div>
+
+    </header>
+
+
+    <main>
+      <section id="sobre" class="card">
+        <h2>Sobre Zerzius Asset Management</h2>
+        <p>
+          Zerzius es una sociedad holding privada enfocada en la gestión a largo plazo de inversiones y participaciones empresariales.
+          La compañía actúa como entidad matriz, proporcionando un marco estable y eficiente para la administración del patrimonio empresarial y financiero.
+        </p>
+      </section>
+
+      <section id="filosofia" class="card">
+        <h2>Nuestra Filosofía</h2>
+        <p>
+          Zerzius actúa como una entidad holding estratégica, dedicada a la tenencia y gestión de participaciones en sociedades operativas,
+          así como a la supervisión de las estructuras financieras y corporativas del grupo, coordinando la asignación de capital de forma eficiente y responsable.
+        </p>
+        <p>
+          Su modelo de gestión se basa en la eficiencia en el uso de los recursos, la supervisión financiera centralizada y la coordinación estratégica de las sociedades participadas,
+          favoreciendo una toma de decisiones coherente y alineada con los objetivos del grupo.
+        </p>
+        <p>
+          La sociedad promueve una estructura de gobierno corporativo orientada a la estabilidad, la continuidad y la correcta toma de decisiones,
+          actuando en todo momento conforme al marco legal y normativo aplicable y apoyándose en estructuras de gobierno transparentes.
+        </p>
+        <p>
+          Zerzius sigue una filosofía de inversión prudente, centrada en la preservación del capital y en el crecimiento sostenible.
+          La compañía está concebida para operar con una visión de largo plazo, priorizando la estabilidad, la propiedad responsable, la paciencia estratégica
+          y la preservación del valor a lo largo del tiempo.
+        </p>
+      </section>
+
+      <section id="contacto" class="card">
+        <h2>Contacto</h2>
+        <p>
+          Zerzius es una entidad de carácter privado. Las comunicaciones oficiales se canalizan a través de los correspondientes cauces contractuales o corporativos.
+        </p>
+      </section>
+    </main>
+
+    <div class="divider"></div>
+
+    <footer>
+      <div>© <span id="y"></span> Zerzius Asset Management S.L.U.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
