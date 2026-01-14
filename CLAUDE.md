@@ -8,12 +8,13 @@ Static website for Zerzius Asset Management S.L. - a private holding company foc
 
 ## Architecture
 
-Single-page static site consisting of:
-- `index.html` - Complete webpage with inline CSS and minimal JavaScript
+Bilingual static site consisting of:
+- `index.html` - Spanish version (default)
+- `index_en.html` - English version
 - `logo1_zerzius.png` - Company logo
 - `CNAME` - GitHub Pages custom domain configuration
 
-No build process, dependencies, or external tooling required.
+Both HTML files contain inline CSS and minimal JavaScript. No build process, dependencies, or external tooling required.
 
 ## Development
 
@@ -28,8 +29,4 @@ Push to `main` branch triggers automatic GitHub Pages deployment.
 
 ## Design System
 
-CSS variables defined in `:root`:
-- `--bg: #DEDDBF` - Background color
-- `--primary: #456350` - Logo green
-- `--primary-dark: #2E463A` - Dark green for headings
-- Font: Ubuntu Mono for branding elements, system fonts for body text
+CSS variables are defined in `:root` within the HTML files. Fonts: Ubuntu Mono for branding elements, system fonts for body text.
